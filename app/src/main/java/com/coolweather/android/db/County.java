@@ -11,6 +11,15 @@ public class County extends DataSupport {
     private int id;
     private String countyName;
     private String weatherId;
+    private int cityId;
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
 
     @Override
     public String toString() {
@@ -18,6 +27,7 @@ public class County extends DataSupport {
                 "id=" + id +
                 ", countyName='" + countyName + '\'' +
                 ", weatherId='" + weatherId + '\'' +
+                ", cityId='" + cityId + '\'' +
                 '}';
     }
 
