@@ -61,21 +61,9 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        if (Build.VERSION.SDK_INT>=21){
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|
-            View.SYSTEM_UI_FLAG_LAYOUT_STABLE|
-            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            window.setStatusBarColor(Color.TRANSPARENT);
-
-
-        }
 
         setContentView(R.layout.activity_weather);
+        StatusBarCompat.translucentStatusBar(this,true);
 //        ButterKnife.inject(this);
         initView();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
